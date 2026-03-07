@@ -114,9 +114,15 @@ const InvoicePreview = ({ invoice, autoDownload, onBack }) => {
                             <div className="info-left">
                                 <div className="info-label bold-border-bottom">Bill To :</div>
                                 <div className="info-content">
-                                    <p className="bold">{invoice.billTo.name}</p>
-                                    <p>{invoice.billTo.address}</p>
-                                    {invoice.billTo.gst && <p>GST: {invoice.billTo.gst}</p>}
+                                    {typeof invoice.billTo === 'object' && invoice.billTo !== null ? (
+                                        <>
+                                            <p className="bold">{invoice.billTo.name}</p>
+                                            <p style={{ whiteSpace: 'pre-wrap' }}>{invoice.billTo.address}</p>
+                                            {invoice.billTo.gst && <p>GST: {invoice.billTo.gst}</p>}
+                                        </>
+                                    ) : (
+                                        <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.4' }}>{invoice.billTo}</p>
+                                    )}
                                 </div>
                             </div>
                             <div className="info-right">
@@ -131,7 +137,7 @@ const InvoicePreview = ({ invoice, autoDownload, onBack }) => {
                                 <div className="info-row" style={{ height: 'auto' }}>
                                     <div className="ship-to">
                                         <span className="info-label">Ship To :</span>
-                                        <p>{invoice.shipTo}</p>
+                                        <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.4' }}>{invoice.shipTo}</p>
                                     </div>
                                 </div>
                             </div>
