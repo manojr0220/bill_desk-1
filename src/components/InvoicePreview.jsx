@@ -143,7 +143,7 @@ const InvoicePreview = ({ invoice, autoDownload, onBack }) => {
                                         <p style={{ whiteSpace: 'pre-wrap', lineHeight: '1.4' }}>{invoice.shipTo}</p>
                                     </div>)}
                                 </div>
-
+ 
                             </div>
                         </div>
 
