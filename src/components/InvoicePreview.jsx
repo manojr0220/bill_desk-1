@@ -132,7 +132,9 @@ const InvoicePreview = ({ invoice, autoDownload, onBack }) => {
                                 </div>
                                 <div className="info-row bold-border-bottom">
                                     <span className="info-label flex-2 align-center">Date :</span>
-                                    <span className="info-value flex-1 align-center bold">{invoice.date.split('-').reverse().join('-')}</span>
+                                    <span className="info-value flex-1 align-center bold">
+                                        {new Date(invoice.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' }).replace(/ /g, '-')}
+                                    </span>
                                 </div>
                                 <div className="info-row" style={{ height: 'auto' }}>
                                     <div className="ship-to">
