@@ -102,7 +102,7 @@ const InvoicePreview = ({ invoice, autoDownload, onBack }) => {
                         {/* Header */}
                         <div className="header-section">
                             <h1 className="company-name">SMR FLYASH BRICKS</h1>
-                            <p className="company-details">2/96, Visaka Road, Manickanatham, Namakkal - 637207</p>
+                            <p className="company-details">2/253, Visaka Road, Manickanatham, Namakkal - 637207</p>
                             <div className="contact-gst">
                                 <span>Contact : 9361216511</span>
                                 <span>GST No : 33AJLPN2970J1ZX</span>
